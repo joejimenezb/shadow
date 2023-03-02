@@ -1,0 +1,68 @@
+{
+  "vpc-provider:account=656930376886:filter.isDefault=true:region=us-east-2:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-0cec27832e5ba2135",
+    "vpcCidrBlock": "172.31.0.0/16",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-0920b45305a737458",
+            "cidr": "172.31.0.0/20",
+            "availabilityZone": "us-east-2a",
+            "routeTableId": "rtb-0be0463f4d458b184"
+          },
+          {
+            "subnetId": "subnet-062d3788a35a81fac",
+            "cidr": "172.31.16.0/20",
+            "availabilityZone": "us-east-2b",
+            "routeTableId": "rtb-0be0463f4d458b184"
+          },
+          {
+            "subnetId": "subnet-05916c70ac5e813fa",
+            "cidr": "172.31.32.0/20",
+            "availabilityZone": "us-east-2c",
+            "routeTableId": "rtb-0be0463f4d458b184"
+          }
+        ]
+      }
+    ]
+  },
+  "vpc-provider:account=656930376886:filter.vpc-id=vpc-0cec27832e5ba2135:region=us-east-2:returnAsymmetricSubnets=true": {
+    "vpcId": "vpc-0cec27832e5ba2135",
+    "vpcCidrBlock": "172.31.0.0/16",
+    "availabilityZones": [],
+    "subnetGroups": [
+      {
+        "name": "Public",
+        "type": "Public",
+        "subnets": [
+          {
+            "subnetId": "subnet-0920b45305a737458",
+            "cidr": "172.31.0.0/20",
+            "availabilityZone": "us-east-2a",
+            "routeTableId": "rtb-0be0463f4d458b184"
+          },
+          {
+            "subnetId": "subnet-062d3788a35a81fac",
+            "cidr": "172.31.16.0/20",
+            "availabilityZone": "us-east-2b",
+            "routeTableId": "rtb-0be0463f4d458b184"
+          },
+          {
+            "subnetId": "subnet-05916c70ac5e813fa",
+            "cidr": "172.31.32.0/20",
+            "availabilityZone": "us-east-2c",
+            "routeTableId": "rtb-0be0463f4d458b184"
+          }
+        ]
+      }
+    ]
+  },
+  "security-group:account=656930376886:region=us-east-2:securityGroupId=sg-0c847e5678fc12642": {
+    "securityGroupId": "sg-0c847e5678fc12642",
+    "allowAllOutbound": false
+  }
+}

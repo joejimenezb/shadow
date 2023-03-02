@@ -1,0 +1,94 @@
+{
+  "version": "29.0.0",
+  "artifacts": {
+    "ShadowProjectStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ShadowProjectStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ShadowProjectStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://656930376886/us-east-2",
+      "properties": {
+        "templateFile": "ShadowProjectStack.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::656930376886:role/cdk-hnb659fds-deploy-role-656930376886-us-east-2",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::656930376886:role/cdk-hnb659fds-cfn-exec-role-656930376886-us-east-2",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-656930376886-us-east-2/8feb869fffc760e2e332774382833e19f0fca880225d37dcb4dfad24a37b3d2c.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ShadowProjectStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::656930376886:role/cdk-hnb659fds-lookup-role-656930376886-us-east-2",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "ShadowProjectStack.assets"
+      ],
+      "metadata": {
+        "/ShadowProjectStack/r1_fn/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "r1fn07EB8275"
+          }
+        ],
+        "/ShadowProjectStack/r1_fn/Trigger/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "r1fnTriggerA77640C7"
+          }
+        ],
+        "/ShadowProjectStack/r1_fn/CurrentVersion/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "r1fnCurrentVersion1BB83FFDe3355297c7c6ef60554814b0d6351062"
+          }
+        ],
+        "/ShadowProjectStack/AWSCDK.TriggerCustomResourceProviderCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWSCDKTriggerCustomResourceProviderCustomResourceProviderRoleE18FAF0A"
+          }
+        ],
+        "/ShadowProjectStack/AWSCDK.TriggerCustomResourceProviderCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AWSCDKTriggerCustomResourceProviderCustomResourceProviderHandler97BECD91"
+          }
+        ],
+        "/ShadowProjectStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ShadowProjectStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ShadowProjectStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ShadowProjectStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}

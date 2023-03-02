@@ -1,0 +1,251 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "ShadowProjectStack": {
+        "id": "ShadowProjectStack",
+        "path": "ShadowProjectStack",
+        "children": {
+          "ZipBucket": {
+            "id": "ZipBucket",
+            "path": "ShadowProjectStack/ZipBucket",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.BucketBase",
+              "version": "2.62.2"
+            }
+          },
+          "defaultvpc": {
+            "id": "defaultvpc",
+            "path": "ShadowProjectStack/defaultvpc",
+            "children": {
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "ShadowProjectStack/defaultvpc/PublicSubnet1",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.62.2"
+                }
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "ShadowProjectStack/defaultvpc/PublicSubnet2",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.62.2"
+                }
+              },
+              "PublicSubnet3": {
+                "id": "PublicSubnet3",
+                "path": "ShadowProjectStack/defaultvpc/PublicSubnet3",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.Resource",
+                  "version": "2.62.2"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.62.2"
+            }
+          },
+          "Role": {
+            "id": "Role",
+            "path": "ShadowProjectStack/Role",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.62.2"
+            }
+          },
+          "SG": {
+            "id": "SG",
+            "path": "ShadowProjectStack/SG",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.Resource",
+              "version": "2.62.2"
+            }
+          },
+          "r1_fn": {
+            "id": "r1_fn",
+            "path": "ShadowProjectStack/r1_fn",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "ShadowProjectStack/r1_fn/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": "rds-lambda-test-jofrajim",
+                      "s3Key": "lambda_function.zip"
+                    },
+                    "role": "arn:aws:iam::656930376886:role/lambda-vpc-sqs-role",
+                    "handler": "lambda_function.lambda_handler",
+                    "runtime": "python3.9",
+                    "vpcConfig": {
+                      "subnetIds": [
+                        "subnet-0920b45305a737458",
+                        "subnet-062d3788a35a81fac",
+                        "subnet-05916c70ac5e813fa"
+                      ],
+                      "securityGroupIds": [
+                        "sg-0c847e5678fc12642"
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.CfnFunction",
+                  "version": "2.62.2"
+                }
+              },
+              "Trigger": {
+                "id": "Trigger",
+                "path": "ShadowProjectStack/r1_fn/Trigger",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "ShadowProjectStack/r1_fn/Trigger/Default",
+                    "children": {
+                      "Default": {
+                        "id": "Default",
+                        "path": "ShadowProjectStack/r1_fn/Trigger/Default/Default",
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CfnResource",
+                          "version": "2.62.2"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CustomResource",
+                      "version": "2.62.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.triggers.Trigger",
+                  "version": "2.62.2"
+                }
+              },
+              "CurrentVersion": {
+                "id": "CurrentVersion",
+                "path": "ShadowProjectStack/r1_fn/CurrentVersion",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "ShadowProjectStack/r1_fn/CurrentVersion/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                      "aws:cdk:cloudformation:props": {
+                        "functionName": {
+                          "Ref": "r1fn07EB8275"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_lambda.CfnVersion",
+                      "version": "2.62.2"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_lambda.Version",
+                  "version": "2.62.2"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.triggers.TriggerFunction",
+              "version": "2.62.2"
+            }
+          },
+          "AWSCDK.TriggerCustomResourceProviderCustomResourceProvider": {
+            "id": "AWSCDK.TriggerCustomResourceProviderCustomResourceProvider",
+            "path": "ShadowProjectStack/AWSCDK.TriggerCustomResourceProviderCustomResourceProvider",
+            "children": {
+              "Staging": {
+                "id": "Staging",
+                "path": "ShadowProjectStack/AWSCDK.TriggerCustomResourceProviderCustomResourceProvider/Staging",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.AssetStaging",
+                  "version": "2.62.2"
+                }
+              },
+              "Role": {
+                "id": "Role",
+                "path": "ShadowProjectStack/AWSCDK.TriggerCustomResourceProviderCustomResourceProvider/Role",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.62.2"
+                }
+              },
+              "Handler": {
+                "id": "Handler",
+                "path": "ShadowProjectStack/AWSCDK.TriggerCustomResourceProviderCustomResourceProvider/Handler",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.62.2"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CustomResourceProvider",
+              "version": "2.62.2"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "ShadowProjectStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "ShadowProjectStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.62.2"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.1.262"
+            }
+          },
+          "BootstrapVersion": {
+            "id": "BootstrapVersion",
+            "path": "ShadowProjectStack/BootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnParameter",
+              "version": "2.62.2"
+            }
+          },
+          "CheckBootstrapVersion": {
+            "id": "CheckBootstrapVersion",
+            "path": "ShadowProjectStack/CheckBootstrapVersion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnRule",
+              "version": "2.62.2"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.62.2"
+        }
+      },
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.1.262"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.62.2"
+    }
+  }
+}
